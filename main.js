@@ -9,9 +9,33 @@ const ROLES = [
   "a Problem Solver",
 ];
 
+// ============================================================
+// ✏️ EDIT (optional): Visitor analytics.
+// 1. Create a free account at https://analytics.google.com
+//    (choose "GA4", website platform, your site URL).
+// 2. Copy your Measurement ID — it looks like  G-XXXXXXXXXX
+// 3. Paste it between the quotes below and commit.
+// Leave it empty ("") and no analytics will run at all.
+// ============================================================
+const GA_MEASUREMENT_ID = "";
+
 // ------------------------------------------------------------
 // Everything below makes the site work — no need to edit it.
 // ------------------------------------------------------------
+
+// Google Analytics (only loads if you filled in GA_MEASUREMENT_ID above)
+(function analytics() {
+  if (!GA_MEASUREMENT_ID) return;
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA_MEASUREMENT_ID);
+})();
 
 // Typed effect for the hero role line
 (function typedEffect() {

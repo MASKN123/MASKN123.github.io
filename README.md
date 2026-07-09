@@ -36,6 +36,50 @@ Work through these in order — the site is "done" when all are ticked:
 - [ ] **Everywhere**: replace `YOURPROFILE` with your LinkedIn / Medium
       profile names (your GitHub links are already set to MASKN123)
 - [ ] **Footer** — your name
+- [ ] **Blog** — rewrite the welcome post (`post-welcome.md`) in your own words
+- [ ] **Analytics** (optional) — see the Analytics section below
+
+## The blog
+
+Your site has a built-in blog at **https://maskn123.github.io/blog.html**.
+Posts are written in **Markdown** (plain text with simple formatting — far
+easier than HTML). To publish a new post:
+
+1. In your repository click **Add file → Create new file**.
+2. Name it `post-my-topic.md` — it must **start with `post-`** and **end
+   with `.md`**. Write your post in Markdown (the welcome post shows the
+   basics) and commit it.
+3. Open `posts.js`, click the pencil to edit, and add an entry at the **top**
+   of the list, like this (the `slug` is the middle of the file name —
+   `post-my-topic.md` → `"my-topic"`):
+
+   ```js
+   {
+     slug: "my-topic",
+     title: "My new post title",
+     date: "2026-08-01",
+     summary: "One line about the post.",
+   },
+   ```
+
+4. Commit — the post appears on your blog automatically, newest first.
+
+To delete a post, remove its entry from `posts.js` (and the `.md` file).
+
+## Analytics (count your visitors)
+
+The site is ready for **Google Analytics** — free, and as a data person
+you'll enjoy the dashboards. It is switched **off** until you add your ID:
+
+1. Go to https://analytics.google.com and sign in with a Google account.
+2. Create a **GA4 property** for your website and add a "Web" data stream
+   with the URL `https://maskn123.github.io`.
+3. Google gives you a **Measurement ID** that looks like `G-XXXXXXXXXX`.
+4. Edit `main.js` and paste the ID between the quotes:
+   `const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";` — commit, done.
+
+Within a day you'll see visitors, where they come from, and which pages
+they read, at analytics.google.com.
 
 ## Tips for good content
 
